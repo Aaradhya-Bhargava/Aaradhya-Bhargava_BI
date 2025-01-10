@@ -1,0 +1,34 @@
+create Database ToDo_list_Application; --create Database
+
+show databases;
+
+use ToDo_list_Application; -- use database
+
+--creating the signup Table
+CREATE TABLE signup (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+select * from signup;
+
+--creating the login Table
+CREATE TABLE login ( id INT AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL
+);
+
+select * from login;
+
+--creating the tasks Table
+CREATE TABLE tasks (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    task_name VARCHAR(255) NOT NULL,
+    task_date DATE NOT NULL,
+    deadline_date DATE NOT NULL
+);
+
+select * from tasks;
